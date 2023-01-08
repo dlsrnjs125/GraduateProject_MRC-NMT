@@ -27,4 +27,27 @@ flask를 사용해서 프런트엔드 구축
 2) Transformer 모델을 학습시켜 번역서비스를 제공한다.
 3) 크롤링한 뉴스 데이터로 MRC와 NMT 서비스를 제공한다.
 
-## 
+## 3. 요약
+본 작품은 2개의 모델을 사용해 2개의 task를 사용한다. 첫번째 모델은 BigBird이며 MRC
+task를 수행한다. 두번째 모델은 Transformer이며 NMT task를 수행한다. 미리 크롤링된
+데이터를 선택하여 두가지의 task를 선택적으로 수행한다.
+
+### 1) Crawling
+N포털의 6가지 카테고리 전부 크롤링하며 한번 크롤링할시 약 200개의 데이터가
+축척됩니다.
+### 2) Preprocessing
+Positioning embedding 방식으로 모든 토큰의 앞 뒤 position 을 데이터는 갖고
+있도록 처리한다.
+입력 문장을 tokenizer를 활용해 분할을 하며 masked model 학습방법을 위해
+masking한다.
+### 3) Training
+전처리한 QnA 데이터로 BigBird를 학습시킨다. 또한 NMT 데이터로 Transformer
+모델을 학습시킨다.
+### 4) Testing
+MRC 모델은 KLUE validation 데이터를 가지고 exact_match를 활용하거나
+Levenshtein Distance를 사용해 성능 분석을 진행한다.
+NMT 모델은 BLUE Score를 측정한다.
+### 5) Service
+Database와 Front-End를 사용해 뉴스 MRC,NMT 서비스를 제공한다.
+
+## 4. 시스템 디자인

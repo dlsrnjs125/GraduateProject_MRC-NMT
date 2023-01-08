@@ -73,3 +73,10 @@ NMT같은 경우는 pretrained model을 사용하지 않고 transformer을 사�
 seq2seq 구조에서 Encoder와 Decoder만 채용한 모델로 Self-Attention mechanism 이 큰
 특징이다. 한-영 번역기를 목적을 했기 때문에 src-tokenizer는 KoBERT tokenizer을,
 tgt-tokenizer는 GPT2 를 사용했다. <br/>
+
+## 5. 다이어그램
+### 1) 시퀀스 다이어그램
+![4](https://user-images.githubusercontent.com/64239673/211190560-7b0f5a17-fea6-4936-930c-456b746ad841.png)
+
+### 2) 클래스 다이어그램
+![5](https://user-images.githubusercontent.com/64239673/211190568-aa3838ec-e223-4df4-a04b-f3e5cc8505e9.png)

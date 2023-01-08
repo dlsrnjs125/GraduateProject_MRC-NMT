@@ -51,4 +51,24 @@ NMT 모델은 BLUE Score를 측정한다.
 Database와 Front-End를 사용해 뉴스 MRC,NMT 서비스를 제공한다.
 
 ## 4. 시스템 디자인
+### 1) 전체 시스템 아키텍처
 ![1](https://user-images.githubusercontent.com/64239673/211190192-fd478b15-05e6-4f20-9971-9468363ccd02.png)
+
+### 2) 모델 디자인
+(MRC - Bigbird)
+![2](https://user-images.githubusercontent.com/64239673/211190276-b828d27d-010c-4430-98cf-a73d8625d554.png)
+Bigbird는 기본적으로 BERT와 유사한 masked language model로써 Encoder가 12개 쌓여져
+있는 구조이다. 각 문장의 15%정도가 masking 되어 있어 masking된 단어를 예측하며
+학습한다. Bigbird와 BERT의 차이는 Bigbird는 sparse-attention 을 사용해 학습한다는
+점이다. 이는 BERT의 Sequence의 제곱으로 연산회수가 커지는 것을 피하며 Long
+sequence 연산에 최적이다. BERT는 최대 512 token까지 가능한 반면 Bigbird는
+4096token까지 가능하다. 프로젝트에 사용하는 모델은 한국어로 pretrained 된 KoBigbird
+모델이기 때문에 모델의 용도에 맞게 학습시키고 Finetuning하는 것이 프로젝트의
+핵심이다. <br>
+
+(NMT - Transformer)
+![3](https://user-images.githubusercontent.com/64239673/211190285-88940e51-3019-4c94-ab5f-a950fb35d518.png)
+NMT같은 경우는 pretrained model을 사용하지 않고 transformer을 사용했다. transformer는
+seq2seq 구조에서 Encoder와 Decoder만 채용한 모델로 Self-Attention mechanism 이 큰
+특징이다. 한-영 번역기를 목적을 했기 때문에 src-tokenizer는 KoBERT tokenizer을,
+tgt-tokenizer는 GPT2 를 사용했다.

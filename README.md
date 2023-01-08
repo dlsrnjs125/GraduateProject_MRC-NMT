@@ -51,3 +51,4 @@ NMT 모델은 BLUE Score를 측정한다.
 Database와 Front-End를 사용해 뉴스 MRC,NMT 서비스를 제공한다.
 
 ## 4. 시스템 디자인
+![1](https://user-images.githubusercontent.com/64239673/211190192-fd478b15-05e6-4f20-9971-9468363ccd02.png)

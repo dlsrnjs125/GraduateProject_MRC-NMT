@@ -81,7 +81,7 @@ tgt-tokenizer는 GPT2 를 사용했다. <br/>
 ### 2) 클래스 다이어그램
 ![5](https://user-images.githubusercontent.com/64239673/211190568-aa3838ec-e223-4df4-a04b-f3e5cc8505e9.png)
 
-### 6. 시연
+### 6. 시연 <br/>
 ![image](https://user-images.githubusercontent.com/64239673/229745987-aa41e1d7-5017-47e4-bd15-2ffd5d42543e.png)
 ![image](https://user-images.githubusercontent.com/64239673/229746034-af657a2c-8cfd-476e-b2df-e04bafaf4b3b.png)
 ![image](https://user-images.githubusercontent.com/64239673/229746074-bdcc6791-323c-4628-b27a-34d8c51ec428.png)
